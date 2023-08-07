@@ -10,6 +10,9 @@ packages = [{include = "data_structures_project"}]
 python = "^3.11"
 
 
+[tool.poetry.group.dev.dependencies]
+coverage = "^7.2.7"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
