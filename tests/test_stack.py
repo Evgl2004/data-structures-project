@@ -42,3 +42,11 @@ class TestClassStack(unittest.TestCase):
 
         self.assertEqual(stack.top.data, "data1")
         self.assertEqual(data, "data2")
+
+    def test_str(self):
+        stack = Stack()
+        stack.push('data1')
+        stack.push('data2')
+        stack.push('data3')
+
+        self.assertEqual(str(stack), "data3/data2/data1/")
