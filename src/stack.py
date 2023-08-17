@@ -18,6 +18,16 @@ class Stack:
         """Конструктор класса Stack"""
         self.top = None
 
+    def __str__(self):
+        """Магический метод для строкового представления объекта"""
+        return_str = ""
+        node = self.top
+        while node is not None:
+            return_str = return_str + node.data + "/"
+            node = node.next_node
+
+        return return_str
+
     def push(self, data):
         """
         Метод для добавления элемента на вершину стека
