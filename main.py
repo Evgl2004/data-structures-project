@@ -1,15 +1,15 @@
-from src.queue import Queue
+from src.linked_list import LinkedList
 
 if __name__ == '__main__':
-    # Создаем пустую очередь
-    queue = Queue()
+    # Создаем пустой односвязный список
+    ll = LinkedList()
 
-    # Добавляем данных в очередь
-    queue.enqueue('data1')
-    queue.enqueue('data2')
-    queue.enqueue('data3')
+    # Добавляем данные
+    ll.insert_beginning({'id': 1})
+    ll.insert_at_end({'id': 2})
+    ll.insert_at_end({'id': 3})
+    ll.insert_beginning({'id': 0})
 
-    assert queue.dequeue() == 'data1'
-    assert queue.dequeue() == 'data2'
-    assert queue.dequeue() == 'data3'
-    assert queue.dequeue() is None
+    # Печатаем данные
+    print(ll)
+    assert str(ll) == "{'id': 0} -> {'id': 1} -> {'id': 2} -> {'id': 3} -> None"
