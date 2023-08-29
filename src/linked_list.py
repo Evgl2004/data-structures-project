@@ -47,3 +47,46 @@ class LinkedList:
 
         ll_string += ' None'
         return ll_string[1:]
+
+    def to_list(self):
+        return_lst = []
+        node = self.head
+        while node is not None:
+            return_lst.append(node.data)
+            node = node.next_node
+
+        return return_lst
+
+    def get_data_by_id(self, id_key):
+        # node = self.head
+        # try:
+        #     if node.data['id'] == id_key:
+        #
+        #     else:
+        #         node = node.next_node
+        # except TypeError:
+        #     print("Данные не являются словарем или в словаре нет id.")
+
+        # return_data = None
+        return self.__traversing_list(id_key, self.head)
+        # return_data = None
+        # node = self.head
+        # try:
+        #     while node.data['id'] is not id_key:
+        #         node = node.next_node
+        # except TypeError:
+        #     print("Данные не являются словарем или в словаре нет id.")
+        #     node = node.next_node
+
+        # return node.data
+
+    def __traversing_list(self, id_key, node):
+        try:
+            if node.data['id'] is not id_key:
+                return self.__traversing_list(id_key, node.next_node)
+        except TypeError:
+            print("Данные не являются словарем или в словаре нет id.")
+            return self.__traversing_list(id_key, node.next_node)
+        except AttributeError:
+            return None
+        return node.data
